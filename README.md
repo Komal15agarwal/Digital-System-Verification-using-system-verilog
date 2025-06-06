@@ -30,7 +30,6 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 - Method handle of super class can be made to refer to the subclass method,this allows polymorphism or different forms of the same method.
 - For polymorphism use virtual keyboard to the befor the method name iniside the parent class.
 - The method name must be same in parent class and the child class.
-
 # Lab Exercise
 ### LAB 1:Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
