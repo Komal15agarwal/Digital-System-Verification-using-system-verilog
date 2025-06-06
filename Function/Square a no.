@@ -1,0 +1,28 @@
+// Code design here
+module function_sum(
+  input integer a,b,
+  output integer sum );
+  always @(a,b)
+    sum=sum_2_var(a,b);
+  
+  function integer sum_2_var(input integer a,b);
+    begin 
+      sum_2_var=a*a+b*b;
+    end
+  endfunction
+endmodule
+
+
+// Code testbench here
+module function_sum_tb;
+integer a, b;
+integer sum;
+function_sum val(a, b, sum);
+initial begin
+  $monitor("time-%0t, a=%d, b=%d, sum=%d ",$time, a, b, sum);
+   a=5;b=1;
+ #10 a=3;b=4;
+ #5  a=4;b=1;
+ #1 $finish;
+end
+endmodule 
