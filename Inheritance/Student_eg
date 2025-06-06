@@ -1,0 +1,33 @@
+class student;
+  static int rollNo;
+  int mark;
+  function new();
+  rollNo++;
+  mark=50;
+  endfunction
+  function display();
+    $display("ROLL No=%0d, Mark=%0d", rollNo, mark);
+  endfunction
+endclass
+class detailed_info extends student;
+  int sem1,sem2;
+  function new();
+    sem1=1;
+    sem2=2;
+  endfunction
+  function void display();
+    $display("Sem1=%0d,Sem2=%0d, Roll No=%0d, Mark=%0d",sem1, sem2, rollNo, mark);
+  endfunction
+endclass
+module test;
+  student st;
+  detailed_info dt;
+  initial begin
+    st=new();
+    dt=new();
+    dt.display();
+    st.rollNo=9;
+    st.mark=76;
+    $display("Sem1=%0d, Sem2=%0d, Roll No=%0d, Mark=%0d",dt.sem1, dt.sem2, st.rollNo, st.mark);
+  end
+endmodule
