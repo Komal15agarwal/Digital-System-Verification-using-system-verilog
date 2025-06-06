@@ -15,3 +15,5 @@
 - When local vriable are used the output is assigned only at the end of the task execution.<br>
 ### Fork Join
 SystemVerilog provides support for parallel or concurrent threads through fork join construct. Multiple procedural blocks can be spawned off at the same time using fork and join. There are variations to fork join that allow the main thread to continue executing rest of the statements based on when child threads finish.
+#### Fork Join Types
+- <b>fork join-any:</b>
