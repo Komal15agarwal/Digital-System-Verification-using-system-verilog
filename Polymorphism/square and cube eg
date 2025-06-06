@@ -1,0 +1,31 @@
+class math;
+  int a=5;
+ virtual function void calculation();
+    $display("the input no is a:%0d", a);
+  endfunction
+endclass
+class square extends math;
+  function void calculation();
+    $display("the square of the no %0d is %0d",super.a, (a*a));
+  endfunction
+endclass
+class cube extends math;
+  function void calculation();
+    $display("the cube of the no %0d is %0d",super.a, (a*a*a));
+  endfunction
+endclass
+module tb;
+  initial begin
+    math m[2];
+    square sq;
+    cube c;
+    sq=new();
+    c=new();
+    m[0]=sq;
+    m[1]=c;
+    m[0].calculation();
+    m[1].calculation();
+    sq.calculation();
+    c.calculation();
+  end
+endmodule
