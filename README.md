@@ -17,8 +17,8 @@
 SystemVerilog provides support for parallel or concurrent threads through fork join construct. Multiple procedural blocks can be spawned off at the same time using fork and join. There are variations to fork join that allow the main thread to continue executing rest of the statements based on when child threads finish.
 #### Fork Join Types
 - <b>fork join-any:</b> A fork and join_any will allow the main thread to resume execution of further statements that lie after the fork, if any one of the child threads complete.
-- <b> fork join-none:</br> A fork and join_none will allow the main thread to resume execution of further statements that lie after the fork regardless of whether the forked threads finish.
-- <b> disable fork join: </br> All active threads that have been kicked off from a fork join block can be killed by calling disable fork.
+- <b> fork join-none:</b> A fork and join_none will allow the main thread to resume execution of further statements that lie after the fork regardless of whether the forked threads finish.
+- <b> disable fork join: </b> All active threads that have been kicked off from a fork join block can be killed by calling disable fork.
 ### OOPS IN SYSTEM VERILOG
 #### Class
 - class is a user-defined datatype, an OOP construct, that can be used to encapsulate data (property) and tasks/functions (methods) which operate on the data.
