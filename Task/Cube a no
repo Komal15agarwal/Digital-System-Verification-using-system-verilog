@@ -1,0 +1,38 @@
+// Code design here
+module cube_sum (input [15:0] a,b,
+                 output reg [15:0] s);
+  output reg [15 :0] tempa;
+  output reg [15 :0] tempb;
+  always @(a,b)
+    sum_2_var(a,b,s);
+                    
+  task sum_2_var(input [15:0] a,b,output reg [15:0] s);
+           begin
+             cube_var(a,tempa);
+             cube_var(b,tempb);
+             s = tempa+tempb;
+           end
+         endtask
+  task cube_var(input [15:0]a,output reg [15:0] temp);
+            begin
+              #2
+              temp = (a*a*a);
+            end
+          endtask
+     endmodule
+
+// Code testbench here
+module sum_cube_tb;
+  reg [15:0]a,b;
+  wire [15:0]s;
+  
+  cube_sum obj1 (a,b,s);
+  initial begin
+    $monitor("time=%0t,a=%d,b=%d,s=%d",$time,a,b,s);
+    a=3;b=5;
+    #5 a=5;b=7;
+    #7 a=7;b=9;
+    #1 $finish;
+    
+  end
+endmodule
