@@ -25,9 +25,15 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 - The properties can be of any datatype in system verilog and can also be handle to another class.
 - this keyword is used to refer to the current class. Normally used within a class to refer to its own properties/methods.
 - display () is a function, and rightly so, because displaying values does not consume simulation time.
+#### Constructor
+- It is done with a function new().
+- It is called class constructor.
+- It is function with no return type.This LHS of assigenment determine the return type.
+- If a class doesnot provide any user defined new method the constructor is called implicitly.
 #### Inheritance
 - Inheritance is an OOP concept that allows the user to create classes that are built upon exisiting class.
-- The new class will be with new properties and method
+- The new class will be with new properties and method along with having access to all the propeties and methods of the original class.
+##### In
 #### Polymorphism
 - System verilog provides  an ability to an object to take on many forms.
 - Method handle of super class can be made to refer to the subclass method,this allows polymorphism or different forms of the same method.
@@ -35,6 +41,12 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 - The method name must be same in parent class and the child class.
 #### Virtual Keyboard
 - <b>Pure virtual Keyboard:</b> A virtual method in an abstract class may be declared as a proptotype without providing an implementation.An extened subclass may provide an implementation by overriding the pure virtual method with having a method body.
+#### Abstract Class
+- An abstract class sets out the prototype for the sub classes.
+- Abstract class can be created by using virtual keyboard.
+- It xan only be derivied can not be instantiated.
+- From this abstarct base class,a number of useful subclasses may be derived.
+- Each of these subclass look vey similar, all needing the same set of the methods, nut they could vary significantly in the inner details.
 # Lab Exercise
 ### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
@@ -43,3 +55,4 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 ### LAB 2: OOPS in system verilog
 - SystemVerilog, though primarily a hardware description and verification language, supports Object-Oriented Programming (OOP) to enhance testbench reusability, modularity, and scalability, especially for Verification using UVM (Universal Verification Methodology).
 ### LAB 3: Inheritance and polymorphism
+### LAB 4: Virtual keyboard,abstract class
