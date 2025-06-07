@@ -55,4 +55,4 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 ### LAB 2: OOPS in system verilog
 - SystemVerilog, though primarily a hardware description and verification language, supports Object-Oriented Programming (OOP) to enhance testbench reusability, modularity, and scalability, especially for Verification using UVM (Universal Verification Methodology).
 ### LAB 3: Inheritance and polymorphism
-### LAB 4: Virtual keyboard,abstract class
+### LAB 4: Virtual keyboard,abstract class,class assignment:- handle copy and shallow copy
