@@ -25,15 +25,21 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 - The properties can be of any datatype in system verilog and can also be handle to another class.
 - this keyword is used to refer to the current class. Normally used within a class to refer to its own properties/methods.
 - display () is a function, and rightly so, because displaying values does not consume simulation time.
+#### Inheritance
+- Inheritance is an OOP concept that allows the user to create classes that are built upon exisiting class.
+- The new class will be with new properties and method
 #### Polymorphism
 - System verilog provides  an ability to an object to take on many forms.
 - Method handle of super class can be made to refer to the subclass method,this allows polymorphism or different forms of the same method.
 - For polymorphism use virtual keyboard to the befor the method name iniside the parent class.
 - The method name must be same in parent class and the child class.
+#### Virtual Keyboard
+- <b>Pure virtual Keyboard:</b> A virtual method in an abstract class may be declared as a proptotype without providing an implementation.An extened subclass may provide an implementation by overriding the pure virtual method with having a method body.
 # Lab Exercise
-### LAB 1:Introduction to function,Task and System verilog threads
+### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
 - The process of passing the arguement by value and reference.
 - Performed fews codes of this
-### LAB 2:OOPS in system verilog
+### LAB 2: OOPS in system verilog
 - SystemVerilog, though primarily a hardware description and verification language, supports Object-Oriented Programming (OOP) to enhance testbench reusability, modularity, and scalability, especially for Verification using UVM (Universal Verification Methodology).
+### LAB 3: Inheritance and polymorphism
