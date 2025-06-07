@@ -1,0 +1,25 @@
+virtual class geometry;
+  pure virtual function integer operation(int a);
+endclass
+class circle extends geometry;
+  int SA;
+  virtual function integer operation(int a);
+    SA=(22*a*a)/7;
+    $display("The Surface Area of circle is: %0f", SA);
+  endfunction
+endclass
+class cube extends geometry;
+  int SA;
+  virtual function integer operation(int a);
+    SA=6*a*a;
+    $display("The Surface Area of cube is: %0f", SA);
+  endfunction
+endclass
+module tb;
+  initial begin
+    circle c1=new();
+    cube c2=new();
+    c1.operation(10);
+    c2.operation(10);
+  end
+endmodule
