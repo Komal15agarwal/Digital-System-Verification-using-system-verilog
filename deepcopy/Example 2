@@ -1,0 +1,50 @@
+class student;
+  int roll;
+  int mark;
+  function new();
+    roll=1;
+    mark=47;
+  endfunction
+  function student copy;
+    copy=new();
+    copy.roll=this.roll;
+    copy.mark=this.mark;
+  endfunction
+endclass
+class college;
+  int clg_id;
+  student st;
+  function new();
+    clg_id=5478;
+    st=new();
+  endfunction
+  function void display();
+    $display("student college id=%0d",clg_id);
+    $display("student Roll no=%0d",st.roll);
+    $display("student mark=%0d",st.mark);
+  endfunction
+  function college copy;
+    copy=new();
+    copy.clg_id=this.clg_id;
+    copy.st=st.copy;
+  endfunction
+endclass
+module tb;
+  college c1,c2;
+  initial begin
+    c1=new();
+    $display("*** Calling c1 display ***");
+    c1.display;
+    c2=c1.copy();
+    $display("*** calling c2 display ***");
+    c2.display;
+    c2.st.roll=22;
+    c2.st.mark=12;
+    $display("**calling c1 after chnaging c2 property**");
+    
+    c1.display();
+    $display("**calling c2 after chnaging c2 property**");
+    
+    c2.display();
+  end
+endmodule
