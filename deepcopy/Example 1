@@ -1,0 +1,48 @@
+class class_a;
+  int a;
+  function new();
+    a=10;
+  endfunction
+  function class_a copy;
+    copy=new();
+    copy.a=this.a;
+    return copy;
+  endfunction
+endclass
+class class_b;
+  int b;
+  class_a cl_a;
+  function new();
+    b=20;
+    cl_a=new();
+  endfunction
+  function void display();
+    $display("class_b b=%0d",b);
+    $display("class_a a=%0d",cl_a.a);
+  endfunction
+  function class_b copy;
+    copy=new();
+    copy.b=this.b;
+    copy.cl_a=cl_a.copy;
+    return copy;
+  endfunction
+endclass
+module deep_copy;
+  class_b b1,b2;
+  initial begin
+    b1=new();
+    $display("** Calling b1 display**");
+    b1.display();
+    b2=b1.copy;
+    $display("** Calling b2 display**");
+    b2.display();
+    b2.b=22;
+    b2.cl_a.a=12;
+    $display("**calling b1 after chnaging b2 property**");
+    
+    b1.display();
+    $display("**calling b2 after chnaging b2 property**");
+    
+    b2.display();
+  end
+endmodule
