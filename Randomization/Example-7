@@ -1,0 +1,21 @@
+class packet;
+  rand bit [15:0] a;
+  rand bit [1:0] b;
+  function void pre_randomize();
+    $display("==============");
+      $display("Inside Pre");
+      $display("value of a=%0d and b=%0d",a,b);
+  endfunction
+  function void post_randomize();
+    $display("Inside Post");
+      $display("value of a=%0d and b=%0d",a,b);
+  endfunction
+endclass
+module rand_method;
+  initial begin
+    packet pkt=new();
+    repeat(3) begin
+      pkt.randomize();
+    end
+  end
+endmodule
