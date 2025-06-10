@@ -1,0 +1,18 @@
+class student;
+  randc bit[1:0] mark;
+  string name="Komal";
+  int rollNo=1;
+endclass
+module rand_methods;
+  int i;
+   //i=0;
+   initial begin
+    student st;
+    st = new();
+     for(int i=1;i<=8;i++)
+      begin 
+        void'(st.randomize());
+        $display("Name of the student=%s of ROllNo=%0d Semester=%0d the mark=%0d ",st.name,st.rollNo,i,st.mark);
+      end
+    end
+endmodule
