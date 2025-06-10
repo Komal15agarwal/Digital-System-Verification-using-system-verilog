@@ -1,0 +1,29 @@
+class packet;
+  rand bit [4:0] a;
+  randc bit [3:0] b;
+endclass
+module rand_method;
+  initial begin
+    packet pkt=new;
+    pkt.b.rand_mode(0);
+    repeat(5) begin
+      pkt.randomize();//randomises the rand and randc variable of pkt object.
+      $display("\ta=%0d\tb=%0d",pkt.a,pkt.b);
+      //$display("a.rand_mode()=%0d\tb.rand_mode()=%0d",pkt.a.rand_mode(),pkt.b.rand_mode());
+    end 
+    pkt.a.rand_mode(0);
+    pkt.b.rand_mode(1);
+    repeat(5) begin
+      pkt.randomize();//randomises the rand and randc variable of pkt object.
+      $display("\ta=%0d\tb=%0d",pkt.a,pkt.b);
+      //$display("a.rand_mode()=%0d\tb.rand_mode()=%0d",pkt.a.rand_mode(),pkt.b.rand_mode());
+    end 
+    pkt.a.rand_mode(1);
+    pkt.b.rand_mode(0);
+    repeat(5) begin
+      pkt.randomize();//randomises the rand and randc variable of pkt object.
+      $display("\ta=%0d\tb=%0d",pkt.a,pkt.b);
+      //$display("a.rand_mode()=%0d\tb.rand_mode()=%0d",pkt.a.rand_mode(),pkt.b.rand_mode());
+    end 
+  end
+endmodule
