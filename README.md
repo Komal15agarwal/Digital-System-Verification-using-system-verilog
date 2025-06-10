@@ -47,6 +47,13 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 - It xan only be derivied can not be instantiated.
 - From this abstarct base class,a number of useful subclasses may be derived.
 - Each of these subclass look vey similar, all needing the same set of the methods, nut they could vary significantly in the inner details.
+#### Shallow Copy
+The shallow copy is used to copy
+- Class properties like integers, strings, instance handle, etc
+- Nested objects are not copied, only instance handles are copied which means any changes are done in ‘nested copied object’ will also reflect in the ‘nested original object’ or vice-versa.
+The new() method is used for copying.
+#### Deep Copy
+The deep copy is the same as shallow copy except nested created objects are also copied by writing a custom method. Unlike shallow copy, full or deep copy performs a complete copy of an object.
 # Lab Exercise
 ### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
