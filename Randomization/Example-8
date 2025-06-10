@@ -1,0 +1,26 @@
+class packet;
+  rand  bit [7:0] addr;
+  rand bit wr_rd;
+  bit tmp;
+  function void pre_randomize();
+     if(tmp==1) begin
+      addr.rand_mode(0);
+    end
+    else begin
+      addr.rand_mode(1);
+ 
+    end
+  endfunction
+  function void post_randomize();
+    tmp=wr_rd;
+    $display("POST RANDOMIZATION::Addr=%0d,wr_rd=%0d",addr,wr_rd);
+  endfunction
+endclass
+module rand_method;
+  initial begin
+    packet pkt;
+    pkt=new();
+    repeat(4)
+    pkt.randomize();
+  end
+endmodule
