@@ -1,0 +1,13 @@
+class packet;
+  rand bit[2:0] addr;
+endclass
+module rand_methods;
+  initial begin
+    packet pkt;
+    pkt=new();
+    repeat(15) begin
+      pkt.randomize();
+      $display("\t addr=%0d",pkt.addr);
+    end
+  end
+endmodule
