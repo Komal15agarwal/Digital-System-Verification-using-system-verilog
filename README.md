@@ -33,7 +33,7 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 #### Inheritance
 - Inheritance is an OOP concept that allows the user to create classes that are built upon exisiting class.
 - The new class will be with new properties and method along with having access to all the propeties and methods of the original class.
-##### In
+- <b>Inheritance Terminology: </b> Parent class and Child Class
 #### Polymorphism
 - System verilog provides  an ability to an object to take on many forms.
 - Method handle of super class can be made to refer to the subclass method,this allows polymorphism or different forms of the same method.
@@ -50,10 +50,26 @@ SystemVerilog provides support for parallel or concurrent threads through fork j
 #### Shallow Copy
 The shallow copy is used to copy
 - Class properties like integers, strings, instance handle, etc
-- Nested objects are not copied, only instance handles are copied which means any changes are done in ‘nested copied object’ will also reflect in the ‘nested original object’ or vice-versa.
+- Nested objects are not copied, only instance handles are copied which means any changes are done in ‘nested copied object’ will also reflect in the ‘nested original object’ or vice-versa.<br>
 The new() method is used for copying.
 #### Deep Copy
 The deep copy is the same as shallow copy except nested created objects are also copied by writing a custom method. Unlike shallow copy, full or deep copy performs a complete copy of an object.
+#### Scope Resolution
+- The class scope operator :: is used to specify an identifier defined within the scope of a class.
+- Classes and other scopes can have the same identifier.
+- The scope resolution operator uniquely identifies a member of a particular class.
+#### Extern Methods
+An extern method provides a facility for class methods to define them outside of the class body.
+If the method definition is lengthy (many lines of code inside a method), the extern method provides better readability and cleaner implementation of the class.
+- <b>External function: </b> The definition of the function is written outside the class body.
+- <b>External Task:</b> The definition of the task written outside the class body.
+- Declare the method(Function/Task) with an extern keyword in the keyword in the class body. 
+#### Casting
+- casting means the conversion of one data type to another datatype.
+- In some situation its is neccessary to convert data type is
+Two type of casting:
+- <b>Static casting:</b> It converts one data type to another compatible data type.As the name suggests, static casting is only applicable to fixed data types. It does not apply to the Object-Oriented programming concept.
+- <b>Dynamic Casting:</b> Dynamic casting is used to cast the assigned values to the variables that might not be ordinarily valid. The $cast is the system method. 
 # Lab Exercise
 ### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
@@ -63,3 +79,5 @@ The deep copy is the same as shallow copy except nested created objects are also
 - SystemVerilog, though primarily a hardware description and verification language, supports Object-Oriented Programming (OOP) to enhance testbench reusability, modularity, and scalability, especially for Verification using UVM (Universal Verification Methodology).
 ### LAB 3: Inheritance and polymorphism
 ### LAB 4: Virtual keyboard,abstract class,class assignment:- handle copy and shallow copy
+### LAB 5: Deep Copy and Extern Method
+### LAB 6: Casting
