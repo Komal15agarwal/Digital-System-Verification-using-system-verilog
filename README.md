@@ -1,4 +1,8 @@
 # Digital-System-Verification-using-system-verilog
+## Introduction
+SystemVerilog is commonly used in the semiconductor. It is a hardware description and hardware verification language used to model, design, simulate testbench. SystemVerilog is based on Verilog and some extensions. It is standardized as IEEE 1800.
+
+SystemVerilog provides support for gate-level, RTL, and behavioral descriptions, coverage, object-oriented, assertion, and constrained random constructs. It also includes application programming interfaces (APIs) to foreign programming languages.
 ### Function
 - Function should have atleast one input arguement.<br>
 - A function cananot have an input or output declaration.<br>
@@ -69,7 +73,13 @@ If the method definition is lengthy (many lines of code inside a method), the ex
 - In some situation its is neccessary to convert data type is
 Two type of casting:
 - <b>Static casting:</b> It converts one data type to another compatible data type.As the name suggests, static casting is only applicable to fixed data types. It does not apply to the Object-Oriented programming concept.
-- <b>Dynamic Casting:</b> Dynamic casting is used to cast the assigned values to the variables that might not be ordinarily valid. The $cast is the system method. 
+- <b>Dynamic Casting:</b> Dynamic casting is used to cast the assigned values to the variables that might not be ordinarily valid. The $cast is the system method.
+#### Data Hiding and Encapsulation
+Data encapsulation is a mechanism that combines class properties and methods.
+
+Data hiding is a mechanism to hide class members within the class. They are not accessible outside of class scope. This avoids class member modification outside the class scope and its misuse.
+
+By default, all class members are accessible with class handles in SystemVerilog. To restrict access, access qualifiers are used.
 # Lab Exercise
 ### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
