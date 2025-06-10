@@ -1,0 +1,18 @@
+class packet;
+  rand bit[7:0] addr;
+  rand bit [7:0] data;
+  function void pre_randomize();
+    $display("Inside pre_randomize");
+  endfunction
+  function void post_randomize();
+    $display("inside post randomize");
+    $display("Value of addr=%0d,data=%0d",addr,data);
+  endfunction
+endclass
+module rand_method;
+  initial begin
+    packet pkt;
+    pkt=new();
+    pkt.randomize();
+  end
+endmodule
