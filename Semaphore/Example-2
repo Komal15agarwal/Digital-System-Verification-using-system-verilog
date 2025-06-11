@@ -1,0 +1,19 @@
+module semoaphore_eg;
+  semaphore sema;
+  initial begin
+    sema=new(3);
+    fork
+      display();
+      display();
+    join
+  end
+  task automatic display();
+    $display($time,"\tEntered display");
+    sema.get(3);
+    $display($time,"\t Current simulation time");
+    #20;
+    sema.put(2);
+    #5;
+    sema.put(1);
+  endtask
+endmodule
