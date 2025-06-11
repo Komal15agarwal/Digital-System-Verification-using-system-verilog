@@ -106,4 +106,5 @@ Possible random value generated:  2, 3, 1, 0, 3, 2, 0, 1..
 ### LAB 3: Inheritance and polymorphism
 ### LAB 4: Virtual keyboard,abstract class,class assignment:- handle copy and shallow copy
 ### LAB 5: Deep Copy and Extern Method
-### LAB 6: Casting
+### LAB 6: Casting,Randomization
+### LAB 7: Constraints
