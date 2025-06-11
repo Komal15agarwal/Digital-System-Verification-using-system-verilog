@@ -80,10 +80,22 @@ Data hiding is a mechanism to hide class members within the class. They are not 
 By default, all class members are accessible with class handles in SystemVerilog. To restrict access, access qualifiers are used.
 #### Randomization
 Randomization is a process of producing random values of the mentioned data type.
-
 As SystemVerilog also deals with objects, the $random method from Verilog is not sufficient for randomizing an object.<br>
 <b>Need for Randomization</b><br>
-As per the increasing complexity of the design, there are high chances to have more bugs in the design when it is written for the first time. To verify DUT thoroughly, a verification engineer needs to provide many stimuli. There can be multiple cross combinations of variables in a real system. So, it is not possible practically to write directed cases to verify every possible combination. So, it is very much required to have randomization in the verification testbench.
+As per the increasing complexity of the design, there are high chances to have more bugs in the design when it is written for the first time. To verify DUT thoroughly, a verification engineer needs to provide many stimuli. There can be multiple cross combinations of variables in a real system. So, it is not possible practically to write directed cases to verify every possible combination. So, it is very much required to have randomization in the verification testbench.<br>
+rand and randc keywords
+<b>To randomize a class object, the following keywords are used while declaring class variables.</b><br>
+- rand
+- randc
+<b>rand Keyword</b>
+On randomizing an object, the rand keyword provides uniformly distributed random values.
+rand bit [4:0] value;
+On randomizing, any values within 5’h0 to 5’h1F will be generated with equal probability
+
+<b>randc Keyword</b>
+On randomizing an object, the randc keyword provides random value without repeating the same value unless a complete range is covered. Once all values are covered, the value will repeat. This ensures that to have all possible values without repeating the same value unless every value is covered.
+randc bit [1:0] value;   // Possible values = 0, 1, 2, 3
+Possible random value generated:  2, 3, 1, 0, 3, 2, 0, 1..
 # Lab Exercise
 ### LAB 1: Introduction to function,Task and System verilog threads
 - We learnt about the function,task and fork join.
