@@ -1,0 +1,15 @@
+class packet;
+  rand bit[3:0]addr;
+  constraint addr_range{addr dist{2:=5,7:=8,10:=12};}
+endclass
+module cont_weight;
+  initial begin
+    packet pkt=new();
+    $display("-----------");
+    repeat(10)begin
+      pkt.randomize();
+      $display("\t addr=%0d",pkt.addr);
+      $display("--------------");
+    end
+  end 
+endmodule
