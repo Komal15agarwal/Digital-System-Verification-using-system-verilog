@@ -1,0 +1,19 @@
+class packet;
+  rand byte addr[];
+  rand byte data[];
+  constraint avalue{foreach (addr[i]) addr[i] inside{4,8,12,16,10,7,5,6};}
+  constraint dvalue{foreach(data[j])data[j]>40*j;}
+  constraint asize{addr.size<4;}
+  constraint dsize{data.size==addr.size;}
+endclass
+module constr_iteration;
+  initial begin
+    packet pkt=new();
+    $display("-----------");
+    repeat(2)begin
+      pkt.randomize();
+      $display("\t addr size=%0d data size=%0d",pkt.addr.size(),pkt.data.size());
+      foreach(pkt.addr[i])$display("\t addr =%0d data =%0d",pkt.addr[i],pkt.data[i]);
+    end
+  end
+endmodule
