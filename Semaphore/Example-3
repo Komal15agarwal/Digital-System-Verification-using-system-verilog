@@ -1,0 +1,26 @@
+module semoaphore_eg;
+  semaphore sema;
+  initial begin
+    sema=new(3);
+    fork
+      display1();
+      display2();
+    join
+  end
+  task automatic display1();
+    sema.get(3);
+    $display($time,"\t Display1:start");
+    #20;
+    sema.put(2);
+    #5;
+    sema.put(1);
+    $display($time,"\tdisplay1 end");
+  endtask
+  task automatic display2();
+    sema.get(1);
+    $display($time,"\t Display2:start");
+    #20;
+    sema.put(1);
+    $display($time,"\tdisplay2 end");
+  endtask
+endmodule
