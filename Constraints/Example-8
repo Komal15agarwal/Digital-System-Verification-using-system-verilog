@@ -1,0 +1,29 @@
+class parent;
+  rand bit[4:0]a;
+  rand bit[3:0]b;
+  constraint a_range{a>10;a<20;a dist{[10:15]:=2,[16:20]:=1};}
+  constraint b_range{b<10;}
+endclass
+class child extends parent;
+  rand bit[5:0]x;
+  constraint a_range{a>20;a<30;a dist{[20:25]:=2};}
+  constraint x_range{x>0;x<=40;}
+endclass
+module main;
+  initial begin
+    parent p;
+    child c;
+    p=new();
+    c=new();
+    repeat(5)
+      begin
+        p.randomize();
+        $display("\t a=%0d \tb=%0d",p.a,p.b);
+      end
+    $display("\t----------\t");
+    repeat (5) begin
+      c.randomize();
+      $display("\t a=%0d \tb=%0d \tx=%0d",c.a,c.b,c.x);
+    end
+  end
+endmodule
