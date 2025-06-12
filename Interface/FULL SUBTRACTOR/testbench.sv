@@ -1,5 +1,6 @@
 `include "interface.sv"
 module tbench_top;
+  integer i;
   intf i_intf();
   subtractor DIT(
     .x(i_intf.x),
@@ -9,11 +10,15 @@ module tbench_top;
     .diff(i_intf.diff));  
   initial begin
     i_intf.x=0;
-    i_intf.y=1;
+    i_intf.y=0;
     i_intf.z=0;
-    $display("Value of x=%0d,y=%0d,z=%0d",i_intf.x,i_intf.y,i_intf.z);
-    #5;
-    $display("Difference:%0d",i_intf.diff);
-    $display("Borrow:%0d",i_intf.borrow);
+    $monitor("Value of x=%0b, y=%0b, z=%0b, Difference:%0b, Borrow:%0b",i_intf.x,i_intf.y,i_intf.z,i_intf.diff,i_intf.borrow);
+    for(i=0;i<8;i++)
+      begin
+        #5;
+        i_intf.x=$random;
+        i_intf.y=$random;
+        i_intf.z=$random;
+      end    
   end
 endmodule
