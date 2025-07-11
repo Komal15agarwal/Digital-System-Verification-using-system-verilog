@@ -86,7 +86,7 @@ As per the increasing complexity of the design, there are high chances to have m
 rand and randc keywords
 <b>To randomize a class object, the following keywords are used while declaring class variables.</b><br>
 - rand
-- randc
+- randc<br>
 <b>rand Keyword</b>
 On randomizing an object, the rand keyword provides uniformly distributed random values.
 rand bit [4:0] value;
